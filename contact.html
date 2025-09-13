@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Yamkela School of Excellence</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <img src="assets/logo.png" alt="School Logo" class="logo-img">
+      <h1 class="brand-title">Yamkela School of Excellence</h1>
+    </div>
+    <nav class="main-nav">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main container">
+  <section class="hero">
+    <div class="hero-left">
+      <h2>Contact Us</h2>
+      <p>We’d love to hear from you! If you have any questions or need further information, please reach out to us using the form below or the contact info provided.</p>
+      <p><strong>Email:</strong> info@yamkela.edu.za<br><strong>Phone:</strong> +27 12 345 6789</p>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <h3>Send us a message</h3>
+    <form id="contactForm" action="#" method="POST">
+      <label class="field">
+        <span class="label-text">Your name</span>
+        <input type="text" name="name" required>
+      </label>
+      <label class="field">
+        <span class="label-text">Your email</span>
+        <input type="email" name="email" required>
+      </label>
+      <label class="field">
+        <span class="label-text">Message</span>
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <div class="step-actions">
+        <button type="submit" class="btn">Send Message</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2025 Yamkela School of Excellence — All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
