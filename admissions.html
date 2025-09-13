@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admissions — Yamkela School of Excellence</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <img src="assets/logo.png" alt="School Logo" class="logo-img">
+      <h1 class="brand-title">Yamkela School of Excellence</h1>
+    </div>
+    <nav class="main-nav">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="admissions.html" class="nav-link active">Admissions</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main container">
+  <h2 class="page-title">Admissions — Registration Form</h2>
+
+  <!-- progress -->
+  <div class="progress-wrap">
+    <div id="formProgress" class="progress-text">Step 1 of 4</div>
+    <div class="progress-container" aria-hidden="true">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- form -->
+  <form id="admissionForm" class="form-container" enctype="multipart/form-data" novalidate>
+<!-- Step 1 -->
+<section class="form-step active" data-step="1">
+  <h3>Learner Information</h3>
+
+  <label class="field">
+    <span class="label-text">Full name</span>
+    <input type="text" id="learner_name" name="learner_name" required>
+  </label>
+
+  <label class="field">
+    <span class="label-text">South African ID number (13 digits)</span>
+    <input type="text" id="id_number" name="id_number" maxlength="13" inputmode="numeric" required>
+  </label>
+
+  <div class="row">
+    <label class="field">
+      <span class="label-text">Date of birth</span>
+      <input type="date" id="dob" name="dob" readonly required>
+    </label>
+
+    <label class="field">
+      <span class="label-text">Gender</span>
+      <!-- visible readonly gender field -->
+      <input type="text" id="gender" name="gender" readonly>
+    </label>
+
+    <label class="field">
+      <span class="label-text">Applying for Grade</span>
+      <select id="grade" name="grade" required>
+        <option value="">--Select--</option>
+        <option value="8">Grade 8</option>
+        <option value="9">Grade 9</option>
+        <option value="10">Grade 10</option>
+        <option value="11">Grade 11</option>
+        <option value="12">Grade 12</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="step-actions">
+    <button type="button" class="btn" data-next>Next</button>
+  </div>
+</section>
+
+    <!-- Step 2 -->
+    <section class="form-step" data-step="2" aria-hidden="true">
+      <h3>Subjects & Extramurals</h3>
+      <p class="muted">English and Life Orientation are compulsory for all grades. For Grade 10–12 learners you must select subjects (max 7 including languages). Grade 8–9 view the curriculum (no selection).</p>
+
+      <div id="gradeInfo" class="grade-info muted" aria-hidden="true"></div>
+
+      <div id="subjectsPanel">
+        <label class="field">
+          <span class="label-text">Choose subjects (hold Ctrl/Cmd to select multiple)</span>
+          <select id="subjectsSelect" name="subjects[]" multiple size="8" aria-label="Subjects">
+            <option value="English">English</option>
+            <option value="LO">Life Orientation</option>
+            <option value="Sesotho">Sesotho</option>
+            <option value="Sestwana">Sestwana</option>
+            <option value="isiXhosa">isiXhosa</option>
+            <option value="Zulu">Zulu</option>
+            <option value="Pedi">Pedi</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Physical Science">Physical Science</option>
+            <option value="Biology">Biology</option>
+            <option value="History">History</option>
+            <option value="Geography">Geography</option>
+            <option value="Accounting">Accounting</option>
+          </select>
+          <p class="muted small">Max 7 subjects; max 2 languages. English + LO required.</p>
+        </label>
+
+        <label class="field">
+          <span class="label-text">Extramural activities (optional)</span>
+          <select id="extramurals" name="extramurals[]" multiple size="5">
+            <option>Soccer</option>
+            <option>Netball</option>
+            <option>Rugby</option>
+            <option>Athletics</option>
+            <option>Chess</option>
+            <option>Debate</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="step-actions">
+        <button type="button" class="btn ghost" data-prev>Previous</button>
+        <button type="button" class="btn" data-next>Next</button>
+      </div>
+    </section>
+
+    <!-- Step 3 -->
+    <section class="form-step" data-step="3" aria-hidden="true">
+      <h3>Parent / Guardian</h3>
+
+      <label class="field">
+        <span class="label-text">Parent / Guardian name</span>
+        <input type="text" id="parent_name" name="parent_name" required>
+      </label>
+
+      <label class="field">
+        <span class="label-text">Relationship to learner</span>
+        <input type="text" id="relationship" name="relationship" required>
+      </label>
+
+      <div class="row">
+        <label class="field">
+          <span class="label-text">Email</span>
+          <input type="email" id="parent_email" name="parent_email">
+        </label>
+        <label class="field">
+          <span class="label-text">Phone</span>
+          <input type="tel" id="parent_phone" name="parent_phone">
+        </label>
+      </div>
+
+      <label class="field checkbox">
+        <input type="checkbox" id="emergencySameAsParent">
+        <span>Emergency contact is same as parent/guardian</span>
+      </label>
+
+      <h4>Emergency contact</h4>
+      <label class="field">
+        <span class="label-text">Name</span>
+        <input type="text" id="emergency_name" name="emergency_name" required>
+      </label>
+
+      <label class="field">
+        <span class="label-text">Relationship</span>
+        <input type="text" id="emergency_relationship" name="emergency_relationship" required>
+      </label>
+
+      <label class="field">
+        <span class="label-text">Phone</span>
+        <input type="tel" id="emergency_phone" name="emergency_phone" required>
+      </label>
+
+      <div class="step-actions">
+        <button type="button" class="btn ghost" data-prev>Previous</button>
+        <button type="button" class="btn" data-next>Next</button>
+      </div>
+    </section>
+
+    <!-- Step 4 -->
+    <section class="form-step" data-step="4" aria-hidden="true">
+      <h3>Address & Documents</h3>
+
+      <label class="field">
+        <span class="label-text">Learner address</span>
+        <input type="text" id="address" name="address" required>
+      </label>
+
+      <label class="field">
+        <span class="label-text">Previous school</span>
+        <input type="text" id="previous_school" name="previous_school" required>
+      </label>
+
+      <label class="field">
+        <span class="label-text">Upload learner ID / birth cert (PDF/JPG/PNG)</span>
+        <input type="file" id="id_copy" name="id_copy" accept=".pdf,.jpg,.jpeg,.png" required>
+      </label>
+
+      <label class="field">
+        <span class="label-text">Upload parent ID</span>
+        <input type="file" id="parent_id_copy" name="parent_id_copy" accept=".pdf,.jpg,.jpeg,.png" required>
+      </label>
+
+      <label class="field">
+        <span class="label-text">Upload previous grade report</span>
+        <input type="file" id="report_copy" name="report_copy" accept=".pdf,.jpg,.jpeg,.png" required>
+      </label>
+
+      <div class="step-actions">
+        <button type="button" class="btn ghost" data-prev>Previous</button>
+        <button type="submit" class="btn primary">Submit Application</button>
+      </div>
+    </section>
+  </form>
+</main>
+
+<!-- Thank-you modal -->
+<div id="thankYouModal" class="modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="thankYouTitle">
+    <button class="modal-close" aria-label="Close">✕</button>
+    <div class="checkmark-wrapper">
+      <svg class="checkmark" viewBox="0 0 52 52" aria-hidden="true">
+        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+        <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16"/>
+      </svg>
+    </div>
+    <h3 id="thankYouTitle">Thank You!</h3>
+    <p>Your application has been successfully submitted. We will contact you shortly.</p>
+    <a href="index.html" class="btn">Back to Home</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2025 Yamkela School of Excellence — All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
